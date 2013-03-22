@@ -13,7 +13,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
+    mainwindow.cpp \
     configurator.cpp \
     helpabout.cpp \
     operationguide.cpp \
