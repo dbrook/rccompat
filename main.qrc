@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/appIcon">
+        <file>rccompat3.png</file>
+        <file>red blood cell.ico</file>
+        <file>qt.png</file>
+        <file>reset.png</file>
+        <file>help.png</file>
+        <file>exit.png</file>
+        <file>config.png</file>
+    </qresource>
+</RCC>

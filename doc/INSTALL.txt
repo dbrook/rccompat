@@ -1,0 +1,47 @@
+Installation instructions for RCcompat
+--------------------------------------
+
+Requirements
+------------
+RCcompat (as of release 2) requires C++ and Qt runtime libraries. This project
+was compiled using mingw32 with Qt linking to it. As such, the following files
+should be kept in the same directory as the executable in order to best harness
+the dynamic linking environment in Windows:
+
+  QtCore4.dll, QtGui4.dll, libgcc_s_dw2-1.dll, libstdc++-6.dll, mingwm10.dll
+
+In Linux or MacOS, it's assumed that the Qt libraries are already present.
+
+Due to limitations with MinGW, RCcompat is a 32-bit application, but it works
+in 64-bit Windows just the same.
+
+
+Installation
+------------
+If you've grabbed the already-built version of RCcompat, this is very simple.
+Copy the RCcompat3 directory's contents wherever you'd like (say, a network
+drive or "Program Files"). Then on (the/each) workstation, navigate to this
+location and right click the RCcompat3 executable and drag to wherever you'd
+like the shortcut to appear. Upon releasing the button, you'll get a menu and
+choose "Create Shortcut Here".
+
+TODO: In Linux: create a script to make an entry in /usr/share/application as
+                well as copy the binary (and icon) to /opt/RCcompat/...
+
+      In MacOS: I don't have a Mac, but surely at some point I can figure out
+                how to make a DMG or something that can be dragged to Apps.
+
+
+Configuration File
+------------------
+There is a provided appConfig.ini file which holds the settings of RCcompat as
+of version 3. In Windows, this file should be kept in the same directory as the
+RCcompat3 executable. Whomever "owns" the file is the one who will be able to
+access the RCcompat3 > Configuration... menu within the application, all others
+will get a permissions error. This is useful in a multi-user environment where
+you wouldn't want this arbitrarily changed.
+
+(In reality, this is simply obeying the Windows file permissions before
+running the configuration dialog in the application, so if you want multiple
+people to be able to change it, you'll have to manually change the attributes
+of appConfig.ini)

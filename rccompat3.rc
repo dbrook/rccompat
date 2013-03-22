@@ -1,0 +1,35 @@
+//
+// Add a custom icon for Windows Explorer
+//
+IDI_ICON1		ICON	DISCARDABLE		"red blood cell.ico"
+
+//
+// Setup the details that appear when you right-click
+// and go to "Properties" in Windows Explorer. This will
+// make the application look oh-so-professional!
+//
+1 VERSIONINFO
+FILEVERSION 3,0,0,0
+PRODUCTVERSION 3,0,0,0
+//FILETYPE VFT_APP
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "040904E4"
+		{
+			VALUE "CompanyName", ""
+            VALUE "FileVersion", "3.0.0"
+            VALUE "FileDescription", "RCcompat - Blood antigen statistical calculator"
+			VALUE "InternalName", "rccompat"
+			VALUE "LegalCopyright", "2012 - Daniel Brook"
+			VALUE "LegalTrademark", ""
+			VALUE "OriginalFilename", "RCcompat3.exe"
+			VALUE "ProductName", "Red Cell Compatibility Calculator"
+			VALUE "ProductVersion", "3.0"
+		}
+	}
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x0409, 1200
+	}
+}

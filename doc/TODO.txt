@@ -1,0 +1,8 @@
+TODO List
+---------
+
+	- Do something to override the default QSettings file such that
+	  it behaves better across operating systems. Right now, the
+	  QSettings file goes (on Windows) wherever the application .exe
+	  is located and on Linux/Mac it will go in the current working
+	  directory (likely the user's home directory) when run.

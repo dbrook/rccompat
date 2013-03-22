@@ -1,0 +1,39 @@
+  Version         		Description
+--------------------------------------------------------------------------------
+
+Version 3.0   - released January 13, 2012.
+		Complete rewrite (still in Qt/C++) but to make the code much more
+		maintainable in the future. This release also has better widget layout
+		mechanisms done "the Qt way" that allow the interface to scale properly
+		if an end user desires larger/smaller fonts as configured in their O.S.
+		Because of these changes, the program is now completely portable to 
+		Windows, GNU/Linux, and MacOS to allow as much flexibility as possible.
+		The final improvement was to simplify the amount of interaction required
+		to get a calculation result; now the results are updated as the user
+		goes through and makes selection.
+
+Version 2.2   - released July 13, 2012.
+		Fixed the bug where resetting the Rh Factor radio buttons wasn't 
+		implemented. This involved using a little hack in the UI code to 
+		un-bind the radio buttons from each other and then recombining them.
+
+Version 2.1   - released June 22, 2012.
+		Cleaned up a memory leak problem with the about window by using the C++ 
+		delete operator in the closeEvent member function and binding the
+		accept() and reject() signals to that close() slot. The memory leaks
+		were previously occurring when using Escape to close the window.
+
+Version 2.0   - released June 3, 2012.
+		Completely rewritten in Qt/C++.
+		This allowed for the use of buttons that could be toggled rather than
+		check-buttons. This made indications of which antigens are selected
+		a great deal clearer. 
+		Per-request, the selectable antigens requiring patient race were 
+		eliminated, which resulted in a simpler interface.
+
+Version 1.0   - released May 25, 2012.
+		Written in Tcl/Tk and required special packaging for running on Windows,
+		ran on Linux with very little effort but resultant Windows binaries were
+		just too large. Additionally some rather poor programming practices were
+		implemented just to get the tool off the ground and tested. It worked, 
+		but the author didn't feel very great about it.

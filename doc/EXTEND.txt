@@ -1,0 +1,39 @@
+Adding new antigens to RCcompat (for programmers)
+-------------------------------------------------
+
+At some point, the selections made available to the end-user may prove to be
+insufficient in some way. Extending the capabilities of RCcompat to represent
+additional antigens isn't very difficult. Following these steps, even someone
+unfamiliar with Qt could update it. You'll want to use Qt Creator either way.
+
+You'll first want to add a button in mainwindow.ui. Follow the pattern of
+naming widgets and labeling them in accordance with their neighbors.
+
+Next, go to redcellantigens.h and add the new antigen to the enumerated type
+called "ANTIGEN_TYPE". Continue down and add a signal and public slot for the
+new type (again following the pattern used).
+
+This is the most complex part (really!). Go to redcellantigens.cpp and define
+the new "enable_..." slot you created in the header file. Next, continue down
+to the void RedCellAntigens::resetAntigens( void ) function and add to it the
+following pair of lines:
+
+    setAntigen( [new antigen name],  false );
+    emit [new_antigen_name]_set( false );
+
+Now navigate to the function double RedCellAntigens::computeUnitsNeeded( void ).
+In here, you'll have to add the computation for the antigen you've added. The
+way this works is very simple. For example, the chance of testing a single
+unit of blood for a patient with a Kell (K) antigen and having a compatible
+match is 91%. So the line for computing K is:
+
+    if (this->getAntigenStatus( K ))    {result *= 0.91;}
+
+Next, open mainwindow.cpp and scroll to the "Antigen Selection group area" 
+that is located in the window's constructor and follow the pattern that is
+there, using your new antigen name and button name.
+
+Now do a recompile and test the new changes.
+
+(NOTE: If you're working on a new release, see README for how to update the
+       version number displayed by the application)

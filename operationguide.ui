@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OperationGuide</class>
+ <widget class="QDialog" name="OperationGuide">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>392</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Operation</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" alignment="Qt::AlignTop">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Notice: &lt;br/&gt;&lt;/span&gt;The results produced by this application are only suggestions generated from&lt;br/&gt;available blood antigen statistics. Additional units may need to be tested in &lt;br/&gt;order to find the desired number of compatible units.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Operation&lt;br/&gt;&lt;/span&gt;To use the application, simply choose the target patient's antigens with the&lt;br/&gt;buttons under &amp;quot;Antigen Selection&amp;quot;. If an antigen from the Rhesus group is &lt;br/&gt;selected, Positive or Negative must be selected for any results to display. &lt;br/&gt;Next, select the quantity of compatible units for the patient to receive by &lt;br/&gt;changing the number under Quantity.&lt;/p&gt;&lt;p&gt;Results are immediately calculated any time something is changed or selected.&lt;br/&gt;If the &amp;quot;Units to Antigen-Type&amp;quot; area changes to a white-on-red color scheme,&lt;br/&gt;outside resources will likely be needed to obtain the desired matching units of &lt;br/&gt;blood. This configurable threshold is designed to help save reagents. It &lt;br/&gt;defaults to 10, but can be changed by either pressing F2 or choosing &lt;br/&gt;Configuration... from the Calculator menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>OperationGuide</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>OperationGuide</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
